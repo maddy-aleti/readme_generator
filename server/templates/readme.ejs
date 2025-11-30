@@ -1,0 +1,16 @@
+# Hi, I'm <%= data.user.name || data.user.login %> 👋
+
+<% if (data.user.bio) { %>
+**<%= data.user.bio %>**
+<% } %>
+
+## 🔥 Top Projects
+<% data.repos.forEach(repo => { %>
+- [<%= repo.name %>](<%= repo.url %>) — <%= repo.desc %> (⭐ <%= repo.stars %>)
+<% }) %>
+
+## 🔧 Languages
+<%= data.languages.join(', ') %>
+
+---
+*Generated using the README Generator project.*
